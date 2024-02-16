@@ -12,7 +12,6 @@ class SyncDatabaseInitial extends SyncDatabaseState {
 
 class SyncingWeatherData extends SyncDatabaseState{
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }
@@ -23,7 +22,6 @@ class DataSyncSuccessfull extends SyncDatabaseState{
   const DataSyncSuccessfull(this.weatherModel);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [weatherModel];
 }
 
@@ -34,7 +32,6 @@ final List<WeatherModel> newModel;
   const SyncSuccessfull(this.newModel);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [newModel];
 }
 class DataSyncError extends SyncDatabaseState{
@@ -43,7 +40,6 @@ class DataSyncError extends SyncDatabaseState{
   const DataSyncError(this.errorMessage);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [errorMessage];
 
 }

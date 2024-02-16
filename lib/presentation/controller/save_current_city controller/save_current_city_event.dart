@@ -10,6 +10,5 @@ class SaveCurrentCityWeather extends SaveCurrentCityEvent{
   const SaveCurrentCityWeather(this.weatherModel);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [weatherModel];
 }

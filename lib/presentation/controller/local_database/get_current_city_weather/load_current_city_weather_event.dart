@@ -7,7 +7,6 @@ abstract class LoadCurrentCityWeatherEvent extends Equatable {
 
 class GetCurrentCityWeatherData extends LoadCurrentCityWeatherEvent{
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }

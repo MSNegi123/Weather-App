@@ -194,7 +194,7 @@ class MainUIWidget extends StatelessWidget {
 
 
   void _showSaveDialog(BuildContext context) async {
-    final currentContext = context; // Store the current context
+    final currentContext = context;
 
     final result = await showDialog<String>(
       context: context,
@@ -211,14 +211,14 @@ class MainUIWidget extends StatelessWidget {
             TextButton(
               child: Text(WeatherAppString.cancel),
               onPressed: () {
-                Navigator.of(dialogContext).pop(); // Use dialogContext here
+                Navigator.of(dialogContext).pop();
               },
             ),
             TextButton(
               child: Text(WeatherAppString.save),
               onPressed: () {
                 String text = saveNewCityTextController.text;
-                Navigator.of(dialogContext).pop(text); // Use dialogContext here
+                Navigator.of(dialogContext).pop(text);
               },
             ),
           ],
@@ -227,7 +227,7 @@ class MainUIWidget extends StatelessWidget {
     );
 
     if (result != null) {
-      getCityWeather(result, currentContext); // Use the stored context
+      getCityWeather(result, currentContext);
     }
   }
 }

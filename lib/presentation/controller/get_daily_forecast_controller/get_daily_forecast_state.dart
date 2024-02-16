@@ -11,7 +11,6 @@ class GetDailyForecastInitial extends GetDailyForecastState {
 
 class LoadingDailyForecast extends GetDailyForecastState{
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }
@@ -21,7 +20,6 @@ class DailyForecastLoaded extends GetDailyForecastState{
 
   const DailyForecastLoaded(this.forecastList);
   @override
-  // TODO: implement props
   List<Object?> get props => [forecastList];
 
 
@@ -34,7 +32,6 @@ class DailyForcastLoadingError extends GetDailyForecastState{
   const DailyForcastLoadingError(this.foreCastError);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [foreCastError];
 
 }

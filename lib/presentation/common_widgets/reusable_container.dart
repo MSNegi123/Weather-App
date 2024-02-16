@@ -39,7 +39,6 @@ class NextWeekCard extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-      /// temp
         Text(
           forecastModel.temp.day.toString(),
           style: WeatherAppFonts.large().copyWith(
@@ -50,7 +49,6 @@ class NextWeekCard extends StatelessWidget {
           height: 10.h,
         ),
 
-        // wind speed
         Text(
           forecastModel.windSpeed.toString(),
           style: WeatherAppFonts.large().copyWith(

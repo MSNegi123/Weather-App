@@ -15,8 +15,6 @@ class UserCityControllerBloc extends Bloc<UserCityControllerEvent, UserCityContr
   final WeatherAppUseCases getMedaUseCase;
 
   UserCityControllerBloc(this.getMedaUseCase) : super( UserCityControllerInitial()) {
-    //
-
     on<UserCityInitial>((event, emit) async {
       emit(UserCityControllerInitial());
 

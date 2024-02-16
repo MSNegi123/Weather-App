@@ -10,7 +10,6 @@ class SyncMyData extends SyncDatabaseEvent{
 
   const SyncMyData(this.cityNames);
   @override
-  // TODO: implement props
   List<Object?> get props => [cityNames];
 
 }

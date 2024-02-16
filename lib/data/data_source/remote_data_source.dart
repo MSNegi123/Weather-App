@@ -26,9 +26,7 @@ class RemoteDataSource extends BaseRemoteDataSource {
 
   @override
   Future<Either<String, List<Daily>>> getDailyForecast() async {
-    // TODO: implement getDailyForecast
     try {
-      /// a 2-second delay to mock web response
       await Future.delayed(const Duration(seconds: 1));
       final String response =
           await rootBundle.loadString(WeatherAppResources.dailyForecastMock);
@@ -52,7 +50,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
   @override
   Future<Either<String, WeatherModel>> getWeatherInfoForCurrentCity(
       String cityName) async {
-    // TODO: implement getWeatherInfoForCurrentCity
     Map<String, dynamic> queryParameters = {
       'q': cityName,
       'units': 'metric',
@@ -89,7 +86,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
   @override
   Future<Either<String, WeatherModel>> saveCurrentCityWeatherData(
       WeatherModel weatherModel) async {
-    // TODO: implement saveCurrentCityWeatherData
     try {
       final cityNameNormalized = normalizeCityName(weatherModel.name);
       final existingRecords = await cityNameStore.find(
@@ -120,7 +116,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
     return name.toLowerCase().trim();
   }
 
-  /// unslplash city images
   Future<String> getCityImage(String cityName) async {
     try {
       final dio = Dio();
@@ -155,7 +150,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
   @override
   Future<Either<String, List<WeatherModel>>> saveUserCityData(
       WeatherModel weatherModel) async {
-    // TODO: implement saveUserCityData
 
     try {
       final cityNameNormalized = normalizeCityName(weatherModel.name);
@@ -171,7 +165,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
       );
 
       if (existingRecords.isNotEmpty) {
-        // Update now we will do updates
         final existingRecord = existingRecords.first;
         await cityNameStore.update(
           await _db,
@@ -203,7 +196,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
   @override
   Future<Either<String, WeatherModel>> getWeatherForUserCity(
       String cityName) async {
-    // TODO: implement getWeatherForUserCity
     Map<String, dynamic> queryParameters = {
       'q': cityName,
       'units': 'metric',
@@ -256,7 +248,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
   @override
   Future<Either<String, WeatherModel>> syncCitiesWeather(
       String cityName, bool isCurrentCity) async {
-    // TODO: implement syncCitiesWeather
     Map<String, dynamic> queryParameters = {
       'q': cityName,
       'units': 'metric',
@@ -289,8 +280,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
     }
   }
 
-  /// update data
-  ///
   Future<Either<String, WeatherModel>> updateCurrentCityWeatherData(
       WeatherModel weatherModel) async {
     try {
@@ -310,7 +299,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
         final existingWeatherModel =
             WeatherModel.fromJson(existingRecords.first.value);
 
-        // Update the existing record with the new data
         await cityNameStore.update(
           await _db,
           weatherModel.toJson(),
@@ -323,7 +311,7 @@ class RemoteDataSource extends BaseRemoteDataSource {
           ),
         );
 
-        return Right(existingWeatherModel); // Return the existing weather model
+        return Right(existingWeatherModel);
       }
 
       await cityNameStore.add(await _db, weatherModel.toJson());
@@ -332,8 +320,6 @@ class RemoteDataSource extends BaseRemoteDataSource {
       return Left('${WeatherAppString.dataInsertionFailed} ${e.toString()}');
     }
   }
-
-  /// get current city Data
 
   @override
   Future<Either<String, WeatherModel>> getCurrentCityWeather() async {

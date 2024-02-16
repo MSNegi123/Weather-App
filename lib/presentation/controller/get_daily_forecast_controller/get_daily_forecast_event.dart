@@ -7,7 +7,6 @@ abstract class GetDailyForecastEvent extends Equatable {
 
 class GetDailyForCast extends GetDailyForecastEvent{
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }

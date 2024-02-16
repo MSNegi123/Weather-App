@@ -11,8 +11,6 @@ class LoadCurrentCityWeatherBloc extends Bloc<LoadCurrentCityWeatherEvent, LoadC
 
   LoadCurrentCityWeatherBloc(this.weatherAppUseCase) : super(LoadCurrentCityWeatherInitial()) {
     on<GetCurrentCityWeatherData>((event, emit) async {
-      // TODO: implement event handler
-
       emit(const CurrentCityWeatherLoading());
       final result = await weatherAppUseCase.getCurrentCityData();
       result.fold((left) => emit(CurrentCityWeatherLoadingError(left)),

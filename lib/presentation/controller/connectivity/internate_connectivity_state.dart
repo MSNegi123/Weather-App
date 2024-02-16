@@ -14,7 +14,6 @@ class ConnectedState extends InternateConnectivityState {
   const ConnectedState({required this.message});
 
   @override
-  // TODO: implement props
   List<Object?> get props => [message];
 }
 
@@ -24,6 +23,5 @@ class NotConnectedState extends InternateConnectivityState {
   const NotConnectedState({required this.message});
 
   @override
-  // TODO: implement props
   List<Object?> get props => [message];
 }

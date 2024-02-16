@@ -41,9 +41,6 @@ class SavedCitiesCard extends StatelessWidget {
             
             Row(
               children: [
-                /// display city name weather condition and humidity and wind
-                /// home icon
-
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -114,7 +111,6 @@ class SavedCitiesCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      //// image
                       AppUtils().getWeatherIcon(statusImage) != WeatherIcons.refresh
                           ? Icon(
                               AppUtils().getWeatherIcon(statusImage),

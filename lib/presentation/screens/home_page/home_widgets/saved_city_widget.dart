@@ -64,7 +64,6 @@ class SavedCityWidget extends StatelessWidget {
               SizedBox(height: AppBar().preferredSize.height),
               30.0.sizeHeight,
 
-              /// today
               Padding(
                 padding: const EdgeInsets.all(WeatherAppPaddings.s10),
                 child: GlassContainer(
@@ -80,7 +79,6 @@ class SavedCityWidget extends StatelessWidget {
                                   .copyWith(fontSize: WeatherAppFontSize.s30))),
                       2.0.sizeHeight,
 
-                      /// updated at
                       2.0.sizeHeight,
                       Center(
                           child: Text(
@@ -91,7 +89,6 @@ class SavedCityWidget extends StatelessWidget {
                                       color: WeatherAppColor.whiteColor)
                                   .copyWith(fontSize: WeatherAppFontSize.s16))),
 
-                      /// display data from API
                       Column(
                         children: [
                           10.0.sizeHeight,
@@ -117,7 +114,6 @@ class SavedCityWidget extends StatelessWidget {
                                 .copyWith(fontSize: WeatherAppFontSize.s30),
                           ),
 
-                          //temp
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -138,8 +134,6 @@ class SavedCityWidget extends StatelessWidget {
                                         offset: const Offset(2, -8),
                                         child: Text(
                                           WeatherAppString.degreeCelsius,
-                                          // The superscript part
-                                          // Smaller font size for the superscript
                                           style: WeatherAppFonts.large(
                                                   fontWeight: FontWeight.w700,
                                                   color: WeatherAppColor
@@ -156,12 +150,9 @@ class SavedCityWidget extends StatelessWidget {
                             ],
                           ),
 
-                          ///
-                          /// humidty... feels like
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
-                              //crossAxisAlignment:CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                               children: [
@@ -271,7 +262,6 @@ class SavedCityWidget extends StatelessWidget {
                             child: Center(
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                // Center items in the Row
                                 children: List.generate(
                                     states.forecastList.length, (index) {
                                   return Padding(

@@ -5,12 +5,10 @@ abstract class InternateConnectivityEvent extends Equatable {
 }
 class ConnectedEvent extends InternateConnectivityEvent{
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 }
 
 class NotConnectedEvent extends InternateConnectivityEvent {
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 }

@@ -26,7 +26,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => WeatherAppHomePage(showDataFromSavedCities: args[0],cityModel:args[1]));
 
       case WeatherRoutes.savedCitiesRoute:
-        // back to right
         List<dynamic> args = routeSettings.arguments as List<dynamic>;
 
         return LeftToRightPageRoute( child:  CitiesList(isCurrentCityNotFound: args[0],),);
@@ -36,7 +35,6 @@ class RouteGenerator {
     }
   }
 
-  /// route is not found show error
   static Route<dynamic> unDefinedRoute() {
     return MaterialPageRoute(
         builder: (_) => Scaffold(
@@ -48,8 +46,6 @@ class RouteGenerator {
               ),
             ));
   }
-
-  ///page transition animation]
 }
 
 class LeftToRightPageRoute extends PageRouteBuilder {
@@ -57,18 +53,16 @@ class LeftToRightPageRoute extends PageRouteBuilder {
 
   LeftToRightPageRoute({required this.child})
       : super(
-    transitionDuration: const Duration(milliseconds: 500), // Shortened duration
+    transitionDuration: const Duration(milliseconds: 500),
     pageBuilder: (context, animation, secondaryAnimation) => child,
   );
 
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,
       Animation<double> secondaryAnimation, Widget child) {
-    // Use a fade transition for better performance and smoother look
     var begin = const Offset(-1.0, 0.0);
     var end = Offset.zero;
-    var curve = Curves.easeOut; // Smoother curve for the transition
-
+    var curve = Curves.easeOut;
     var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
     var offsetAnimation = animation.drive(tween);
 

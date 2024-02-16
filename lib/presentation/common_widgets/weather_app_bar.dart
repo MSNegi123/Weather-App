@@ -51,7 +51,7 @@ class WeatherAppBar extends StatelessWidget {
               child: Icon(Icons.logout,
                   color: WeatherAppColor.whiteColor)),
         )
-      ], // Removes shadow
+      ],
     );
   }
 }

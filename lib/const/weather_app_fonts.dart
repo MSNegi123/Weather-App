@@ -39,28 +39,4 @@ class WeatherAppFonts {
     );
   }
 
-  static TextStyle medium({
-    Color color = Colors.black,
-    FontWeight fontWeight = FontWeight.normal,
-  }) {
-    return _baseFont(
-      color: color,
-      fontWeight: fontWeight,
-      fontSize: WeatherAppFontSize.s16,
-    );
-  }
-
-  static TextStyle large({
-    Color color = Colors.black,
-    FontWeight fontWeight = FontWeight.bold,
-  }) {
-    return _baseFont(
-      color: color,
-      fontWeight: fontWeight,
-      fontSize: WeatherAppFontSize.s24,
-    );
-  }
-
-
-
 }

@@ -9,18 +9,16 @@ class UserCityInitial extends UserCityControllerEvent{
   const UserCityInitial();
 
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }
-/// insert
+
 class SaveUserCity extends UserCityControllerEvent{
   final WeatherModel weatherModel;
 
   const SaveUserCity(this.weatherModel);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [weatherModel];
 
 }
@@ -32,11 +30,9 @@ class DeleteUserCity extends UserCityControllerEvent{
   const DeleteUserCity(this.weatherModel);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [weatherModel];
 
 }
-/// update
 
 class UpdateUserCity extends UserCityControllerEvent{
   final WeatherModel weatherModel;
@@ -44,18 +40,15 @@ class UpdateUserCity extends UserCityControllerEvent{
   const UpdateUserCity(this.weatherModel);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [weatherModel];
 
 }
 
-/// fetch all user data
 class FetchSavedCitiesData extends UserCityControllerEvent{
 
   const FetchSavedCitiesData();
 
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }
@@ -66,8 +59,6 @@ class GetCityWeather extends UserCityControllerEvent {
   final bool cityNotFound;
   const GetCityWeather(this.cityName, this.context, this.cityNotFound);
   @override
-  // TODO: implement props
   List<Object?> get props => [cityName,context,cityNotFound];
-
 }
 

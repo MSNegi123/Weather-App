@@ -14,7 +14,6 @@ class CurrentCityWeatherLoading extends LoadCurrentCityWeatherState{
 
   const CurrentCityWeatherLoading();
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }
@@ -25,7 +24,6 @@ class CurrentCityWeatherLoaded extends LoadCurrentCityWeatherState{
   const CurrentCityWeatherLoaded(this.weatherModel);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [weatherModel];
 
 }
@@ -36,6 +34,5 @@ class CurrentCityWeatherLoadingError extends LoadCurrentCityWeatherState{
   const CurrentCityWeatherLoadingError(this.message);
 
   @override
-  // TODO: implement props
   List<Object?> get props => [message];
 }

@@ -28,18 +28,14 @@ class WeatherAppUseCases {
     return await baseWeatherRepository.getWeatherForUserCity(cityName);
   }
 
-  /// fetch saved cities
-
   Future<Either<String,List<WeatherModel>>> loadSavedUserCities() async{
     return await baseWeatherRepository.getUserCitiesWithWeather();
   }
 
-
-  // sync data
   Future<Either<String,WeatherModel>> syncUserCitiesData(String cityName, bool isCurrentCity) async{
     return await baseWeatherRepository.syncCitiesWeather(cityName,isCurrentCity);
   }
-//  Future<Either<String,WeatherModel>> getCurrentCityWeather();
+
   Future<Either<String,WeatherModel>> getCurrentCityData() async{
     return await baseWeatherRepository.getCurrentCityWeather();
   }

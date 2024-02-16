@@ -23,21 +23,6 @@ class NewSplash extends StatefulWidget {
 }
 
 class _NewSplashState extends State<NewSplash> with TickerProviderStateMixin {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _navigateToMainScreen();
-  // }
-  //
-  // Future<void> _navigateToMainScreen() async {
-  //   await Future.delayed(const Duration(seconds: 7));
-  //
-  //   if (mounted) {
-  //     Navigator.pushReplacementNamed(context, WeatherRoutes.homePageRoute,
-  //         arguments: [false, null]);
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,8 +63,8 @@ class _NewSplashState extends State<NewSplash> with TickerProviderStateMixin {
                     return GestureDetector(
                       onTap: (){
                         context.read<AuthBloc>().add(SignInWithGoogleEvent());
-                        // Navigator.pushReplacementNamed(context, WeatherRoutes.homePageRoute,
-                        //     arguments: [false, null]);
+                        Navigator.pushReplacementNamed(context, WeatherRoutes.homePageRoute,
+                            arguments: [false, null]);
                       },
                       child: SizedBox(
                         width: 300.w,

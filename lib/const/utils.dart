@@ -18,28 +18,21 @@ import 'app_color.dart';
 import 'app_strings.dart';
 
 class AppUtils {
-  /// a function to convert city name to lowercase to get city Image
   static String convertTextToLower(String cityName) {
     return cityName.toLowerCase();
   }
 
-  /// to upper case
-  /// a function to convert city name to lowercase to get city Image
   static String convertTextToUpper(String text) {
     return text.toUpperCase();
   }
 
-  /// only first later to upper case for api response of current city
   static String convertFirstTextToUpper(String text) {
     return text[0].toUpperCase() + text.substring(1);
   }
 
-  /// on home page we have date format of Jun 07 so belows function takes todays date as an input and returns formated
-  /// output
   static String getFormattedDate() {
     DateTime now = DateTime.now();
 
-    ///  months
     List<String> monthNames = [
       '',
       'Jan',
@@ -62,8 +55,6 @@ class AppUtils {
     return '$month $year';
   }
 
-  /// spinner to load data
-
   Widget loadingSpinner = Center(
     child: SizedBox(
         width: 24,
@@ -73,8 +64,6 @@ class AppUtils {
           strokeWidth: 3,
         )),
   );
-
-  /// weather app response has this 02d for icons belows function will aligned with weather flutter
 
   IconData getWeatherIcon(String weatherCode) {
     switch (weatherCode) {
@@ -95,19 +84,16 @@ class AppUtils {
       case "13d":
         return WeatherIcons.snow;
       default:
-        return WeatherIcons.refresh; // A fallback icon in case of unknown code
+        return WeatherIcons.refresh;
     }
   }
 
-  /// some datas are missing from WEATHER ICONS SO WE MANUALLY HIT THE url
 
   String getWeatherIconURL(String weatherCode) {
     return WeatherAppServices.iconURL +
         weatherCode +
         WeatherAppServices.iconSize;
   }
-
-  /// get next four days
 
   static List<String> getNextFourDays() {
     List<String> daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -125,8 +111,6 @@ class AppUtils {
 
     return nextDays;
   }
-
-  /// time stamp formater
 
   static String formatDateTime(String timestamp) {
     DateTime dateTime = DateTime.parse(timestamp);
@@ -146,14 +130,12 @@ class AppUtils {
     userCityBloc.add(SaveUserCity(cityWeatherInformation));
   }
 
-  /// time formater for home screen widget
   static String extractTime(DateTime dateTime) {
     final formatter = DateFormat('HH:mm');
     final timeString = formatter.format(dateTime);
     return timeString;
   }
 
-  // home widget update
   static void updateHomeScreenWidget(WeatherModel weatherData) {
     HomeWidget.saveWidgetData<String>('city_name', weatherData.name);
     HomeWidget.saveWidgetData<String>(

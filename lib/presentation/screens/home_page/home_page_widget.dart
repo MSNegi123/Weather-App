@@ -100,7 +100,6 @@ class _WeatherAppHomePageState extends State<WeatherAppHomePage> with WidgetsBin
                 },
               );
             } else if (state is NotConnectedState) {
-              // Handle not connected state
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
