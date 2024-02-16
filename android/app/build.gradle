@@ -25,6 +25,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: "kotlin-kapt"
+apply plugin: 'com.google.gms.google-services'
 
 
 android {
@@ -81,5 +82,6 @@ dependencies {
         transitive = true
     }
     kapt 'com.github.bumptech.glide:compiler:4.16.0'
-
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
 }

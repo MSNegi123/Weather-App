@@ -18,10 +18,10 @@ import 'home_widgets/home_utils.dart';
 import 'home_widgets/saved_city_widget.dart';
 
 class WeatherAppHomePage extends StatefulWidget {
-  bool? showDataFromSavedCities;
-  WeatherModel? cityModel;
+  final bool? showDataFromSavedCities;
+  final WeatherModel? cityModel;
 
-  WeatherAppHomePage({super.key, this.showDataFromSavedCities, this.cityModel});
+  const WeatherAppHomePage({super.key, this.showDataFromSavedCities, this.cityModel});
 
   @override
   State<WeatherAppHomePage> createState() => _WeatherAppHomePageState();
